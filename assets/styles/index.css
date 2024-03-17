@@ -32,6 +32,11 @@ nav li {
 nav a {
     text-decoration: none;
     color: #0a0a0a;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff6f61; /* Change color on hover */
 }
 
 .search-btn,
@@ -44,9 +49,20 @@ nav a {
     text-decoration: none;
 }
 
+
+.search-btn:hover,
+.join-now-btn:hover {
+    color: #3f4aee; /* Change color on hover */
+}
 .bg {
     position: absolute;
-    height: 100;
-    padding: ;
-    
+    height: 100vb;
+    width: 100vw;
+    top: auto;
+    left: 0;
+    background: url(/assets/images/gym1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -2;
 }
