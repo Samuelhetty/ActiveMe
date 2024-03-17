@@ -1,0 +1,45 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #c8c0f3;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0a0a0a;
+}
+
+.search-btn,
+.join-now-btn {
+    background-color: #edf1ed;
+    color: #0a0a0a;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+}
