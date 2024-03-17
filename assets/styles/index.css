@@ -1,13 +1,14 @@
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #c8c0f3;
+    background-color: #f1f0f5;
     color: #fff;
     padding: 20px 0;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,8 +42,8 @@ nav a:hover {
 
 .search-btn,
 .join-now-btn {
-    background-color: #edf1ed;
-    color: #0a0a0a;
+    background-color: #052705;
+    color: #f8f4f4;
     padding: 10px 40px;
     border: none;
     border-radius: 10px;
