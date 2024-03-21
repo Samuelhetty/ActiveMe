@@ -17,17 +17,17 @@
     
     <nav class="nav-list">
             <a href="#">Home</a>
-            <a href="#">About Us</a>
+            <a href="#about">About Us</a>
             <a href="#">Workouts</a>
-            <a href="#">BMI</a>
-            <a href="#">Calories Burned</a>
+            <a href="#BMI">BMI</a>
+            <a href="#calories burned">Calories Burned</a>
             <a href="#">Contact</a>
             <a href="#">FAQs</a>
             <button class="btnLogin-popup">Join Now</button>
     </nav>
 
 </header>
-
+<section>
     <div class="wrapper active-popup">
         <span class="icon-close">
             <ion-icon name="close-outline"></ion-icon>
@@ -54,7 +54,7 @@
                     <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn-login">Login</button>
                 <div class="login-register">
                     <p> Don't have an account? <a href="#" class="register-link">SignUp</a></p>
                 </div>
@@ -72,6 +72,13 @@
                 </div>
                 <div class="input-box">
                     <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email"required>
+                   <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
                     <input type="password"required>
@@ -79,7 +86,7 @@
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox"></label>
-                    <a href="#">I agree to the terms and conditions.</a>
+                    <a href="#">I agree to the terms & conditions.</a>
                 </div>
                 <div class="login-register">
                     <p> Already have an account? <a href="#" class="login-link">Login</a></p>
@@ -89,37 +96,35 @@
     </div>
 
 
-
+</section>
      <!-- 
-        - #ABOUT
-      -->
+        - Section about
+     -->
 
-      <section class="section about" aria-label="about" id="about" data-section>
-        <div class="container">
+<section class="about" id="about">
+    <h1 class="heading"> <span>about</span> us </h1>
+    <div class="row">
 
-          <div class="about-banner img-holder" style="--width: 470; --height: 580;">
-            <img src="./assets/images/about-banner.jpg" width="470" height="580" loading="lazy" alt="about banner"
-              class="img-cover">
+        <div class="image-holder">
+            <img src="./assets/images/gym2.jpg" alt="about banner">
+        </div>
 
-            <a href="#" class="btn btn-secondary">Meet Instructor</a>
-          </div>
+    </div>
 
-          <div class="about-content">
+        <div class="content">
 
-            <p class="section-subtitle">About Us</p>
 
-            <h2 class="h2 section-title">We have expert instructor for help our students.</h2>
+            <h3>Your fitness sanctuary where sweat meets convenience and inspiration.</h3>
 
-            <p class="section-text">
-                Welcome to ActiveMe, your fitness sanctuary where sweat meets convenience and inspiration.
-                At ActiveMe, we're not just another fitness website—we're your ultimate workout partner, 
+            <p> 
+                We're not just another fitness website—we're your ultimate workout partner, 
                 empowering you to sculpt your dream physique from the comfort of your own home.
-         
                 Picture this: you wake up, roll out of bed, and instead of braving the crowded gym or battling traffic, 
                 you simply press play on one of our dynamic home workout videos. Whether you're aiming for a killer core,
                 sculpted arms, or a cardio blast, our library of diverse routines has you covered, led by expert trainers 
                 who are as motivating as they are knowledgeable.
-         
+            </p>
+            <p>
                 But we're not just here to guide your workouts; 
                 we're your wellness wizards, equipped with tools to track your progress and empower your journey. 
                 Calculate your BMI with ease, track those burned calories, and dive into our comprehensive FAQs for expert 
@@ -130,13 +135,46 @@
                 waters or a seasoned pro seeking fresh inspiration, welcome home to ActiveMe. Together, let's redefine what
                 it means to thrive, one workout at a time. 
             </p>
-
-
           </div>
 
         </div>
-      </section>
+</section>
+
+ <!-- Section BMI -->
+<section>
+    <div class="BMI" id="BMI">
+        <h1 class="heading"> BMI Calculator</h1>
+        <form action="#">
+            <div class="input-box">
+                <input type="weight"required>
+               <label>Enter your weight</label>
+            </div>
+            <div class="input-box">
+                <input type="height"required>
+                <label>Enter your height</label>
+            </div>
+            <button type="submit" class="btn-login">Calculate BMI</button>
+        </form>
+    </div>
+</section>
       
+<!-- Section Calories Burned -->
+<section>
+    <div class="calories burned" id="calories burned">
+        <h1 class="heading"> Calories Burned Calculator</h1>
+        <form action="#">
+            <div class="input-box">
+                <input type="weight"required>
+               <label>Enter your weight</label>
+            </div>
+            <div class="input-box">
+                <input type="height"required>
+                <label>Enter your height</label>
+            </div>
+            <button type="submit" class="btn-login">Calculate Calories Burned</button>
+        </form>
+    </div>
+</section>
 
     <!--custom js link -->
 <script src="scripts/index.js"></script> 

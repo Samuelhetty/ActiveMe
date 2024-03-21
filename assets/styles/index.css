@@ -5,7 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-
+    outline: none; border: none;
+    transition: 2.s linear;
 }
 
 body {
@@ -18,6 +19,22 @@ body {
     background-position: center;
 }
 
+section {
+    padding: 2rem 7%;
+}
+
+.heading {
+    text-align: center;
+    color: beige;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span {
+    color: burlywood;
+    text-transform: uppercase;
+}
 header {
     position: fixed;
     top: 0;
@@ -29,7 +46,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 1000;
 }
 
 .logo img {
@@ -82,6 +99,7 @@ header {
 }
 
 .btnLogin-popup:hover {
+    background-color: #fff;
     color: #3f4aee; /* Change color on hover */
 }
 
@@ -103,12 +121,13 @@ header {
 }
 
 .wrapper.active-popup {
-    transform: scale(1); 
+    transform: scale(1);
 }
 
 .wrapper.active {
     height: 520px; 
 }
+
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
@@ -222,7 +241,7 @@ header {
     text-decoration: underline;
 }
 
-.btn {
+.btn-login {
     width: 100%;
     height: 45px;
     background: #162938;
@@ -251,42 +270,35 @@ header {
 
 .login-register p a:hover {
     text-decoration: underline;
-}
+}  
 
-
-.container {
-    position: relative;
-    width: 400px;
-    height: 440px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+.about .row {
     display: flex;
-    justify-content: center;
     align-items: center;
-    /*overflow: hidden;*/
-    transform: scale(0);
-    transition: transform .5s ease, height .2s ease;
+    background: #162938;
+    flex-wrap: wrap;
 }
 
-header {
-    text-align: center;
-    margin: 20px 0;
+.about .row .image-holder {
+    flex: 1 1 45rem;
 }
 
-section {
-    margin: 20px;
+.about .row .image-holder  img {
+    width: 100%;
 }
 
-h1,
-h2 {
-color: #333;
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
 }
 
-.container .about-section{
-    position: absolute;
-    transition: none;
-    transform: translateX(400px);
+.about .row .content p {
+    font-size: 3rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
 }
