@@ -25,9 +25,15 @@
             <a href="#">FAQs</a>
             <button class="btnLogin-popup">Join Now</button>
     </nav>
-
+    <div class="icon">
+        <span class="fas fa-bars" id="menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+        </span>
+    </div>
 </header>
-<section>
+
+
+<section class="home" id="home">
     <div class="wrapper active-popup">
         <span class="icon-close">
             <ion-icon name="close-outline"></ion-icon>
@@ -40,15 +46,15 @@
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email"required>
-                   <label>Email</label>
+                    <input id="usernameLogin" type="email"required>
+                   <label for="usernameLogin">Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password"required>
-                    <label>Password</label>
+                    <input id="passwordLogin" type="password"required>
+                    <label for="passwordLogin">Password</label>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me</label>
@@ -67,22 +73,22 @@
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input type="text"required>
-                    <label>Username</label>
+                    <input id="usernameSignup" type="text"required>
+                    <label for="usernameSignup">Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email"required>
-                   <label>Email</label>
+                    <input id="emailSignup" type="email"required>
+                   <label for="emailSignup">Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password"required>
-                    <label>Password</label>
+                    <input id="passwordSignup" type="password"required>
+                    <label for="passwordSignup">Password</label>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox"></label>
@@ -95,9 +101,16 @@
         </div>
     </div>
 
-
+    <div class="content">
+        <h3>Welcome to ActiveMe fitness center</h3>
+        <p><strong>We're your wellness wizards, equipped with tools to track your progress and empower your journey. 
+            Calculate your BMI with ease, track those burned calories, and dive into our comprehensive FAQs for expert 
+            advice on everything from nutrition tips to busting workout myths.</strong>
+        </p>
+        <button class="btnLogin-popup">Join Now</button>
+    </div>
 </section>
-     <!-- 
+      <!-- 
         - Section about
      -->
 
@@ -106,10 +119,11 @@
     <div class="row">
 
         <div class="image-holder">
-            <img src="./assets/images/gym2.jpg" alt="about banner">
+            <img src="./assets/images/about.jpg" alt="about banner">
+            <img src="./assets/images/about1.jpg" alt="about banner">
         </div>
 
-    </div>
+    
 
         <div class="content">
 
@@ -125,54 +139,67 @@
                 who are as motivating as they are knowledgeable.
             </p>
             <p>
-                But we're not just here to guide your workouts; 
-                we're your wellness wizards, equipped with tools to track your progress and empower your journey. 
-                Calculate your BMI with ease, track those burned calories, and dive into our comprehensive FAQs for expert 
-                advice on everything from nutrition tips to busting workout myths.
-         
+                
                 Beyond the pixels and pixels, we're a community of fitness enthusiasts, united by our shared passion for 
                 living our healthiest, happiest lives. So, whether you're a beginner just dipping your toes into the fitness
                 waters or a seasoned pro seeking fresh inspiration, welcome home to ActiveMe. Together, let's redefine what
                 it means to thrive, one workout at a time. 
             </p>
-          </div>
 
         </div>
+    </div>
 </section>
 
  <!-- Section BMI -->
 <section>
     <div class="BMI" id="BMI">
-        <h1 class="heading"> BMI Calculator</h1>
-        <form action="#">
-            <div class="input-box">
-                <input type="weight"required>
-               <label>Enter your weight</label>
+        <div class="container">
+            <div class="image-holder">
+                <img src="./assets/images/bmi.jpg" alt="BMI banner">
             </div>
-            <div class="input-box">
-                <input type="height"required>
-                <label>Enter your height</label>
+            <div class="bmi-cal">
+                <h1 class="heading"> BMI Calculator</h1>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="number" id="height" required>
+                        <label for="height">Enter your height (cm):</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" id="weight" required>
+                        <label for="weight">Enter your height (kg):</label>
+                    </div>
+                    <button onclick="calculateBMI()" class="btn-login">Calculate BMI</button>
+                </form>
+                <div id="result"></div>
             </div>
-            <button type="submit" class="btn-login">Calculate BMI</button>
-        </form>
+        </div>
     </div>
 </section>
+
+
       
 <!-- Section Calories Burned -->
 <section>
-    <div class="calories burned" id="calories burned">
-        <h1 class="heading"> Calories Burned Calculator</h1>
-        <form action="#">
-            <div class="input-box">
-                <input type="weight"required>
-               <label>Enter your weight</label>
+    <div class="calories" id="calories burned">
+        <div class="container">
+            <div class="image-holder">
+                <img src="./assets/images/calories.jpg" alt="calories banner">
             </div>
-            <div class="input-box">
-                <input type="height"required>
-                <label>Enter your height</label>
+            <div class="cal-burner">
+                <h1 class="heading"> Calories Burned Calculator</h1>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="weight"required>
+                        <label>Enter your weight</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="height"required>
+                        <label>Enter your height</label>
+                    </div>
+                    <button type="submit" class="btn-login">Calculate Calories Burned</button>
+                </form>
             </div>
-            <button type="submit" class="btn-login">Calculate Calories Burned</button>
-        </form>
+        </div>
     </div>
 </section>
 

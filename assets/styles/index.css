@@ -9,18 +9,42 @@
     transition: 2.s linear;
 }
 
+html {
+    font-size: 62.5%;
+    overflow: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5rem;
+}
+
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('/assets/images/bg1.png') no-repeat;
+    background: url(../images/bg1.png);
     background-size: cover;
     background-position: center;
+
 }
 
 section {
     padding: 2rem 7%;
+    margin: 20px 0;
+    
 }
 
 .heading {
@@ -48,6 +72,24 @@ header {
     align-items: center;
     z-index: 1000;
 }
+.header .icons span {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 2rem;
+    width: 130px;
+    height: 50px;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.header .icon span:hover{
+    color:#fff;
+}
+
+.menu-btn {
+    display: none;
+}
 
 .logo img {
     width: 120px;
@@ -62,6 +104,10 @@ header {
     font-weight: 500;
     margin-left: 40px;
     transition: color 0.3s ease;
+}
+
+.nav-list a.active {
+    right: ; 
 }
 
 .nav-list a::after {
@@ -83,7 +129,7 @@ header {
     transform: scaleX(1);
 }
 
-.nav-list .btnLogin-popup {
+.btnLogin-popup {
     width: 130px;
     height: 50px;
     background: transparent;
@@ -112,16 +158,16 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transform: scale(0);
+    transform: scaleY(0);
     transition: transform .5s ease, height .2s ease;
 }
 
 .wrapper.active-popup {
-    transform: scale(1);
+    transform: scaleY(1);
 }
 
 .wrapper.active {
@@ -272,6 +318,35 @@ header {
     text-decoration: underline;
 }  
 
+.home {
+    padding-block: 130px 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/bg1.png) no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+.home .content{
+    max-width: 120rem;
+}
+
+.home .content h3{
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    color: #eee;
+    padding: 1rem 0;
+}
+
 .about .row {
     display: flex;
     align-items: center;
@@ -297,8 +372,89 @@ header {
 }
 
 .about .row .content p {
-    font-size: 3rem;
-    color: #fff;
-    padding: 1rem 0;
+    font-size: 2rem;
+    font-weight: lighter;
     line-height: 1.8;
+    color: #eee;
+    padding: 1rem 0;
+}
+
+.BMI .container {
+    
+    background: #f7f5f7;
+    display: flex;
+    align-items: center;
+}
+.BMI .container .heading{
+    color:rgba(0, 0, 0, .5);
+}
+.BMI .container .image-holder {
+    flex: 1 1 45rem;
+}
+
+.BMI .container .image-holder img{
+    width: 100%
+}
+
+.BMI .container .bmi-cal{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+
+.calories .container {
+    
+    background: #f7f5f7;
+    display: flex;
+    align-items: center;
+}
+.calories .container .heading{
+    color:rgba(0, 0, 0, .5);
+}
+.calories .container .image-holder {
+    flex: 1 1 45rem;
+}
+
+.calories .container .image-holder img{
+    width: 100%
+}
+
+.calories .container .cal-burner{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+/* media queries */
+@media (max-width:991px){
+
+    html {
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (max-width:991px){
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+.header .nav-list {
+    position: absolute;
+    top:100%; right: 100%;
+    background: #fff;
+    width: 30rem;
+    height: calc(100vh - 9.5rem);
+    }
+
+.header .nav-list a {
+    color:black;
+    display: block;
+    margin: 1.5rem;
+    padding:.5rem;
+    font-size: 2rem;
+
+    }
 }
