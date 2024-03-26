@@ -1,7 +1,9 @@
+let home = document.querySelector(".home")
 let wrapper = document.querySelector('.wrapper');
 let loginlink = document.querySelector('.login-link');
 let registerlink = document.querySelector('.register-link');
-let btnPopup = document.querySelector('.btnLogin-popup');
+let btnPopup = document.querySelector('#form-open');
+let btnPopup1 = document.querySelector('#form-open1');
 let iconClose = document.querySelector('.icon-close');
 
 
@@ -15,12 +17,19 @@ loginlink.addEventListener('click', ()=> {
 
 
 btnPopup.addEventListener('click', ()=> {
-    wrapper.classList.add('active-popup');
+    home.classList.add('show');
+});
+
+btnPopup1.addEventListener('click', ()=> {
+    home.classList.add('show');
 });
 
 iconClose.addEventListener('click', ()=> {
-    wrapper.classList.remove('active-popup');
+    home.classList.remove('show');
 });
+
+
+
 
 let nav = document.querySelector('.nav-list');
 
@@ -30,7 +39,8 @@ document.querySelector(('#menu-btn').onclick= ()=> {
 
 /* login/signup */
  // Dummy database for storing user information
- let users = [];
+ function loginSignup() {
+    let users = [];
 
  // Function to handle login form submission
  document.getElementById("form-box login").addEventListener("submit", function(event) {
@@ -62,18 +72,24 @@ document.querySelector(('#menu-btn').onclick= ()=> {
          document.getElementById("signupForm").reset();
      }
  });
+}
 
 /* BMI Calculator*/
 
 function calculateBMI() {
-    const height = document.getElementById("height").value;
-    const weight = document.getElementById("weight").value;
+    var height = parseFloat(document.getElementById('height').value);
+    var weight = parseFloat(document.getElementById('weight').value);
 
-    if (height > 0 && weight > 0) {
-        const bmi = weight/((height/100) ** 2);
-        const bmiResult = Your Body Mass Index is: ${bmi.tofixed(2)};
-        document.getElementById("result").textContent = bmiResult;
-    } else {
-        document.getElementById("result").textContent = "Please enter valid Values.";
+    // Check if height and weight are valid numbers
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        document.getElementById('result').innerHTML = "Please provide valid height and weight values.";
+        return;
     }
+
+    // Calculate BMI
+    var bmi = weight / (height * height);
+    bmi = bmi.toFixed(2);
+
+    // Display the result
+    document.getElementById('result').innerHTML = "Your BMI is: " + bmi;
 }

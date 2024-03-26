@@ -35,7 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../images/bg1.png);
+    background: #070018;
     background-size: cover;
     background-position: center;
 
@@ -59,23 +59,26 @@ section {
     color: burlywood;
     text-transform: uppercase;
 }
+
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100;
+    height: 80px;
+    width: 100%;
     color: #fff;
-    padding: 20px 100px;
+    padding: 0 20px;
     font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 100;
 }
-.header .icons span {
+
+header .icon span {
     color: #fff;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 3rem;
     margin-left: 2rem;
     width: 130px;
     height: 50px;
@@ -83,16 +86,16 @@ header {
     margin-left: 40px;
 }
 
-.header .icon span:hover{
+header .icon span:hover{
     color:#fff;
 }
 
 .menu-btn {
-    display: none;
+    display: flex;
 }
 
 .logo img {
-    width: 120px;
+    width: 150px;
     height: auto;
 }
 
@@ -106,9 +109,9 @@ header {
     transition: color 0.3s ease;
 }
 
-.nav-list a.active {
+/*.nav-list a.active {
     right: ; 
-}
+}*/
 
 .nav-list a::after {
     content: '';
@@ -149,8 +152,30 @@ header {
     color: #3f4aee; /* Change color on hover */
 }
 
+
+.btnLogin-popup1 {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 40px;
+    color: #fff;
+    transition: .5s;
+}
+
+.btnLogin-popup1:hover {
+    background-color: #fff;
+    color: #3f4aee; /* Change color on hover */
+}
+
+
 .wrapper {
-    position: relative;
+    position: absolute;
     width: 400px;
     height: 440px;
     background: transparent;
@@ -158,17 +183,39 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     transform: scaleY(0);
     transition: transform .5s ease, height .2s ease;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.wrapper.active-popup {
+.home.show .wrapper{
+    opacity: 1;
+    pointer-events: auto;
     transform: scaleY(1);
 }
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
 
 .wrapper.active {
     height: 520px; 
@@ -198,23 +245,6 @@ header {
 .wrapper.active .form-box.register {
     transition: transform .18s ease;
     transform: translateX(0);
-}
-
-.wrapper .icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: #162938;
-    font-size: 2em;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20px;
-    cursor: pointer;
-    z-index: 1;
 }
 
 .form-box h2 {
@@ -283,6 +313,10 @@ header {
 
 }
 
+.remember-forgot a {
+    color: #162938;
+}
+
 .remember-forgot a:hover {
     text-decoration: underline;
 }
@@ -319,8 +353,11 @@ header {
 }  
 
 .home {
-    padding-block: 130px 80px;
-    min-height: 100vh;
+    /*padding-block: 130px 80px;*/
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -347,6 +384,38 @@ header {
     padding: 1rem 0;
 }
 
+.workout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.workout-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.workout-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-content: center;
+    justify-content: center;
+}
+
+.workout-card h2 {
+    color: #007bff;
+}
+
+.workout-images img {
+    /*border-radius: 50%;*/
+    padding: 20px;
+    vertical-align: middle;
+    width: 300px;
+    height: 300px;
+}
 .about .row {
     display: flex;
     align-items: center;

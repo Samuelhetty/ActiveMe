@@ -16,14 +16,14 @@
     </div>
     
     <nav class="nav-list">
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
             <a href="#about">About Us</a>
-            <a href="#">Workouts</a>
+            <a href="#workout">Workouts</a>
             <a href="#BMI">BMI</a>
             <a href="#calories burned">Calories Burned</a>
             <a href="#">Contact</a>
             <a href="#">FAQs</a>
-            <button class="btnLogin-popup">Join Now</button>
+            <button class="btnLogin-popup" id="form-open">Join Now</button>
     </nav>
     <div class="icon">
         <span class="fas fa-bars" id="menu-btn">
@@ -34,7 +34,7 @@
 
 
 <section class="home" id="home">
-    <div class="wrapper active-popup">
+    <div class="wrapper">
         <span class="icon-close">
             <ion-icon name="close-outline"></ion-icon>
         </span>
@@ -60,7 +60,7 @@
                     <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn-login">Login</button>
+                <button onclick="loginSignup()" type="submit" class="btn-login">Login</button>
                 <div class="login-register">
                     <p> Don't have an account? <a href="#" class="register-link">SignUp</a></p>
                 </div>
@@ -94,6 +94,7 @@
                     <label><input type="checkbox"></label>
                     <a href="#">I agree to the terms & conditions.</a>
                 </div>
+                <button onclick="loginSignup()" type="submit" class="btn-login">Sign In</button>
                 <div class="login-register">
                     <p> Already have an account? <a href="#" class="login-link">Login</a></p>
                 </div>
@@ -107,7 +108,7 @@
             Calculate your BMI with ease, track those burned calories, and dive into our comprehensive FAQs for expert 
             advice on everything from nutrition tips to busting workout myths.</strong>
         </p>
-        <button class="btnLogin-popup">Join Now</button>
+        <button class="btnLogin-popup1" id="form-open1">Join Now</button>
     </div>
 </section>
       <!-- 
@@ -150,6 +151,64 @@
     </div>
 </section>
 
+<section class="workout" id="workout">
+    <h1 class="heading"> <span>workout</span> plans </h1>
+    <div class="workout-grid">
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <img src="./assets/images/cardio.png" alt="workout-images">
+            </div>
+
+            <h2>Cardio Blast</h2>
+
+            <p> 
+                A high-intensity cardio workout to boost your endurance. Get ready to sweat!
+            </p>
+           
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <img src="./assets/images/strength.png" alt="workout-images">
+            </div>
+
+            <h2>Strength Training</h2>
+
+            <p> 
+                Build Strength and muscle with this effective strength training routine.
+            </p>
+           
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <img src="./assets/images/full-body.png" alt="workout-images">
+            </div>
+
+            <h2>Full Body Workout</h2>
+
+            <p> 
+                Build Strength and muscle with this effective strength training routine.
+            </p>
+           
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <img src="./assets/images/muscle.png" alt="workout-images">
+            </div>
+
+            <h2>Muscle Building</h2>
+
+            <p> 
+                Build Strength and muscle with this effective strength training routine.
+            </p>
+           
+        </div>
+    </div>
+</section>
+
  <!-- Section BMI -->
 <section>
     <div class="BMI" id="BMI">
@@ -161,12 +220,16 @@
                 <h1 class="heading"> BMI Calculator</h1>
                 <form action="#">
                     <div class="input-box">
+                        <input type="age" id="age" required>
+                        <label for="age">Enter your age:</label>
+                    </div>
+                    <div class="input-box">
                         <input type="number" id="height" required>
                         <label for="height">Enter your height (cm):</label>
                     </div>
                     <div class="input-box">
                         <input type="number" id="weight" required>
-                        <label for="weight">Enter your height (kg):</label>
+                        <label for="weight">Enter your weight (kg):</label>
                     </div>
                     <button onclick="calculateBMI()" class="btn-login">Calculate BMI</button>
                 </form>
