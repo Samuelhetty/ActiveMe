@@ -71,7 +71,7 @@ function calculateBMI() {
 
     if (height > 0 && weight > 0) {
         const bmi = weight/((height/100) ** 2);
-        const bmiResult = Your Body Mass Index is: ${bmi.tofixed(2)};
+        const bmiResult = `Your Body Mass Index is: ${bmi.toFixed(2)}`;
         document.getElementById("result").textContent = bmiResult;
     } else {
         document.getElementById("result").textContent = "Please enter valid Values.";
