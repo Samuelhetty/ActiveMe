@@ -86,6 +86,9 @@ function calculateBMI() {
         return;
     }
 
+    // Convert height to meters (from centimeters)
+    height = height / 100; // converting cm to meters
+
     // Calculate BMI
     var bmi = weight / (height * height);
     bmi = bmi.toFixed(2);
