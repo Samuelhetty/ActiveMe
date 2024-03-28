@@ -31,11 +31,11 @@ iconClose.addEventListener('click', ()=> {
 
 
 
-let nav = document.querySelector('.nav-list');
+/*let nav = document.querySelector('.nav-list');
 
 document.querySelector(('#menu-btn').onclick= ()=> {
     nav-list.classList.add('active');
-});
+});*/
 
 /* login/signup */
  // Dummy database for storing user information
@@ -93,3 +93,56 @@ function calculateBMI() {
     // Display the result
     document.getElementById('result').innerHTML = "Your BMI is: " + bmi;
 }
+
+/* workout */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const resultDiv = document.getElementById('result');
+
+    searchButton.addEventListener('click', async () => {
+        const name = searchInput.value.trim();
+        if (name === '') {
+            resultDiv.textContent = 'Please enter a name to search.';
+            return;
+        }
+
+        const url = `https://exercisedb.p.rapidapi.com/exercises/name/${name}?limit=10`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'adb293fa25msh1419109d969e210p186661jsna332c01df47d',
+                'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            if (data.length === 0) {
+                resultDiv.textContent = 'No results found.';
+                return;
+            }
+            resultDiv.innerHTML = ''; // Clear previous results
+            data.forEach(item => {
+                const exerciseName = item.name;
+                const exerciseDescription = item.description || 'No description available';
+                const videos = item.videos || [];
+                const exerciseDiv = document.createElement('div');
+                exerciseDiv.innerHTML = `<strong>${exerciseName}</strong><br>${exerciseDescription}<br>`;
+                if (videos.length > 0) {
+                    exerciseDiv.innerHTML += '<strong>Videos:</strong><br>';
+                    videos.forEach(video => {
+                        exerciseDiv.innerHTML += `<a href="${video.url}" target="_blank">${video.title}</a><br>`;
+                    });
+                }
+                exerciseDiv.innerHTML += '<br>';
+                resultDiv.appendChild(exerciseDiv);
+            });
+        } catch (error) {
+            console.error(error);
+            resultDiv.textContent = 'An error occurred while fetching data.';
+        }
+    });
+});

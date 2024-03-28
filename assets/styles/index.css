@@ -384,6 +384,61 @@ header .icon span:hover{
     padding: 1rem 0;
 }
 
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+.input-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.result {
+    margin-top: 20px;
+}
+.result-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.result-item strong {
+    font-weight: bold;
+}
+.result-item a {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 .workout-container {
     max-width: 800px;
     margin: 0 auto;
