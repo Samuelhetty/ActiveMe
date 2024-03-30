@@ -82,7 +82,7 @@ function calculateBMI() {
 
     // Check if height and weight are valid numbers
     if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-        document.getElementById('result').innerHTML = "Please provide valid height and weight values.";
+        document.getElementById('bmi-result').innerHTML = "Please provide valid height and weight values.";
         return;
     }
 
@@ -94,12 +94,12 @@ function calculateBMI() {
     bmi = bmi.toFixed(2);
 
     // Display the result
-    document.getElementById('result').innerHTML = "Your BMI is: " + bmi;
+    document.getElementById('bmi-result').innerHTML = "Your BMI is: " + bmi;
 }
 
 /* workout */
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const resultDiv = document.getElementById('result');
@@ -111,7 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const url = `https://exercisedb.p.rapidapi.com/exercises/name/${name}?limit=10`;
+        const url = 'https://youtube-search-and-download.p.rapidapi.com/channel/about?id=UCE_M8A5yxnLfW0KghEeajjw';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'adb293fa25msh1419109d969e210p186661jsna332c01df47d',
+                'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+            }
+        };
+        
+        try {
+            const response = await fetch(url, options);
+            const result = await response.text();
+            console.log(result);
+        } catch (error) {
+            console.error(error);
+        }
+    });
+});
+
+        /*const url = `https://exercisedb.p.rapidapi.com/exercises/name/${name}?limit=10`;
         const options = {
             method: 'GET',
             headers: {
@@ -120,6 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        const url = 'https://youtube-search-and-download1.p.rapidapi.com/Download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D9bZkp7q19f0';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'adb293fa25msh1419109d969e210p186661jsna332c01df47d',
+                'X-RapidAPI-Host': 'youtube-search-and-download1.p.rapidapi.com'
+            }
+        };
         try {
             const response = await fetch(url, options);
             const data = await response.json();
@@ -128,7 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             resultDiv.innerHTML = ''; // Clear previous results
-            data.forEach(item => {
+            return data;
+            /*data.forEach(item => {
                 const exerciseName = item.name;
                 const exerciseDescription = item.description || 'No description available';
                 const videos = item.videos || [];
@@ -148,4 +176,24 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDiv.textContent = 'An error occurred while fetching data.';
         }
     });
+});*/
+
+document.getElementById("searchButton").addEventListener("click", async () => {
+    const muscleGroup = document.getElementById("searchInput").value;
+    const url = `https://work-out-api1.p.rapidapi.com/search?Muscles=${encodeURIComponent(muscleGroup)}&type=video`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'adb293fa25msh1419109d969e210p186661jsna332c01df47d',
+            'X-RapidAPI-Host': 'work-out-api1.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        document.getElementById("result").innerHTML = result;
+    } catch (error) {
+        console.error(error);
+    }
 });

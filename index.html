@@ -159,7 +159,9 @@
         <h2 class="heading">Workout Search</h2>
         <div class="input-container">
             <input id="searchInput" type="text" placeholder="Enter exercise name">
-            <button id="searchButton">Search</button>
+            <button id="searchButton">Search</button> </div>
+        <div class="eg">
+            <p> eg. Biceps, Triceps, Chest, Back, Legs, Abs</p>
         </div>
         <div id="result" class="result"></div>
     </div>
@@ -168,7 +170,7 @@
 
         <div class="workout-card">
             <div class="workout-images">
-                <img src="./assets/images/cardio.png" alt="workout-images">
+                <a href="https://www.youtube.com/watch?v=ml6cT4AZdqI"><img src="./assets/images/cardio.png" alt="workout-images"></a>
             </div>
 
             <h2>Cardio Blast</h2>
@@ -181,7 +183,7 @@
 
         <div class="workout-card">
             <div class="workout-images">
-                <img src="./assets/images/strength.png" alt="workout-images">
+                <a href="https://www.youtube.com/watch?v=MjPVPDBJ94A"><img src="./assets/images/strength.png" alt="workout-images"></a>
             </div>
 
             <h2>Strength Training</h2>
@@ -194,7 +196,7 @@
 
         <div class="workout-card">
             <div class="workout-images">
-                <img src="./assets/images/full-body.png" alt="workout-images">
+                <a href="https://www.youtube.com/watch?v=8JpKOczCPHU"><img src="./assets/images/full-body.png" alt="workout-images"></a>
             </div>
 
             <h2>Full Body Workout</h2>
@@ -207,7 +209,7 @@
 
         <div class="workout-card">
             <div class="workout-images">
-                <img src="./assets/images/muscle.png" alt="workout-images">
+                <a href="https://www.youtube.com/watch?v=95846CBGU0M"><img src="./assets/images/muscle.png" alt="workout-images"></a>
             </div>
 
             <h2>Muscle Building</h2>
@@ -236,7 +238,7 @@
                     </div>
                     <div class="input-box">
                         <input type="number" id="height" required>
-                        <label for="height">Enter your height (cm):</label>
+                        <label for="height">Enter your height (inches):</label>
                     </div>
                     <div class="input-box">
                         <input type="number" id="weight" required>
@@ -244,7 +246,7 @@
                     </div>
                     <button type="button" onclick="calculateBMI()" class="btn-login">Calculate BMI</button>
                 </form>
-                <div id="result"></div>
+                <div id="bmi-result"></div>
             </div>
         </div>
     </div>
