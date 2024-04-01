@@ -74,6 +74,34 @@ document.querySelector(('#menu-btn').onclick= ()=> {
  });
 }
 
+/* Calories Calculator*/
+
+function calculateCaloriesBurned() {
+    // Prevent the form from submitting
+    events.preventDefault();
+    
+    // Get the values of number of workouts and duration from the form
+    let workouts = parseInt(document.getElementById("workouts").value);
+    let duration = parseInt(document.getElementById("duration").value);
+    
+    // Validate the input values
+    if (isNaN(workouts) || isNaN(duration) || workouts <= 0 || duration <= 0) {
+        alert("Please enter valid values for number of workouts and duration.");
+        return;
+    }
+    
+    // Define constants for calories burned per workout and per minute
+    const caloriesPerWorkout = 100; // Assuming 100 calories burned per workout
+    const caloriesPerMinute = 10; // Assuming 10 calories burned per minute of workout
+    
+    // Calculate the total calories burned
+    let caloriesBurned = (workouts * caloriesPerWorkout) + (duration * workouts * caloriesPerMinute);
+    
+    // Display the result
+    document.getElementById("cal-result").innerHTML = "Your calories burned is: " + caloriesBurned;
+}
+
+
 /* BMI Calculator*/
 
 function calculateBMI() {
