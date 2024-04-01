@@ -421,6 +421,7 @@ header .icon span:hover{
     cursor: pointer;
     margin-left: 10px;
 }
+
 .result {
     margin-top: 20px;
 }
@@ -470,6 +471,10 @@ header .icon span:hover{
     vertical-align: middle;
     width: 300px;
     height: 300px;
+}
+.search-container{
+    display: flex;
+    flex-direction: column;
 }
 .about .row {
     display: flex;
@@ -523,6 +528,9 @@ header .icon span:hover{
 .BMI .container .bmi-cal{
     flex: 1 1 45rem;
     padding: 2rem;
+}
+.bmi-result {
+    margin-top: 20px;
 }
 
 

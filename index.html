@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -313,3 +314,294 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiveMe</title>
+
+
+    <link rel="stylesheet" href="assets/styles/index.css">
+    
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="./assets/images/icon.png" alt="ActiveMe Logo">
+    </div>
+    
+    <nav class="nav-list">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#workout">Workouts</a>
+            <a href="#BMI">BMI</a>
+            <a href="#calories burned">Calories Burned</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQs</a>
+            <button class="btnLogin-popup" id="form-open">Join Now</button>
+    </nav>
+    <div class="icon">
+        <span class="fas fa-bars" id="menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+        </span>
+    </div>
+</header>
+
+
+<section class="home" id="home">
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+        
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input id="usernameLogin" type="email"required>
+                   <label for="usernameLogin">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input id="passwordLogin" type="password"required>
+                    <label for="passwordLogin">Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button onclick="loginSignup()" type="submit" class="btn-login">Login</button>
+                <div class="login-register">
+                    <p> Don't have an account? <a href="#" class="register-link">SignUp</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+            <h2>SignUp</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input id="usernameSignup" type="text"required>
+                    <label for="usernameSignup">Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input id="emailSignup" type="email"required>
+                   <label for="emailSignup">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input id="passwordSignup" type="password"required>
+                    <label for="passwordSignup">Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"></label>
+                    <a href="#">I agree to the terms & conditions.</a>
+                </div>
+                <button onclick="loginSignup()" type="submit" class="btn-login">Sign In</button>
+                <div class="login-register">
+                    <p> Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="content">
+        <h3>Welcome to ActiveMe fitness center</h3>
+        <p><strong>We're your wellness wizards, equipped with tools to track your progress and empower your journey. 
+            Calculate your BMI with ease, track those burned calories, and dive into our comprehensive FAQs for expert 
+            advice on everything from nutrition tips to busting workout myths.</strong>
+        </p>
+        <button class="btnLogin-popup1" id="form-open1">Join Now</button>
+    </div>
+</section>
+      <!-- 
+        - Section about
+     -->
+
+<section class="about" id="about">
+    <h1 class="heading"> <span>about</span> us </h1>
+    <div class="row">
+
+        <div class="image-holder">
+            <img src="./assets/images/about.jpg" alt="about banner">
+            <img src="./assets/images/about1.jpg" alt="about banner">
+        </div>
+
+    
+
+        <div class="content">
+
+
+            <h3>Your fitness sanctuary where sweat meets convenience and inspiration.</h3>
+
+            <p> 
+                We're not just another fitness website—we're your ultimate workout partner, 
+                empowering you to sculpt your dream physique from the comfort of your own home.
+                Picture this: you wake up, roll out of bed, and instead of braving the crowded gym or battling traffic, 
+                you simply press play on one of our dynamic home workout videos. Whether you're aiming for a killer core,
+                sculpted arms, or a cardio blast, our library of diverse routines has you covered, led by expert trainers 
+                who are as motivating as they are knowledgeable.
+            </p>
+            <p>
+                
+                Beyond the pixels and pixels, we're a community of fitness enthusiasts, united by our shared passion for 
+                living our healthiest, happiest lives. So, whether you're a beginner just dipping your toes into the fitness
+                waters or a seasoned pro seeking fresh inspiration, welcome home to ActiveMe. Together, let's redefine what
+                it means to thrive, one workout at a time. 
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section class="workout" id="workout">
+    <h1 class="heading"> <span>workout</span> plans </h1>
+    <div class="search-container">
+        <h2 class="heading">Workout Search</h2>
+        <div class="input-container">
+            <input id="searchInput" type="text" placeholder="Enter exercise name">
+            <button id="searchButton">Search</button> </div>
+        <div class="eg">
+            <p> eg. Biceps, Triceps, Chest, Back, Legs, Abs</p>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+    <br> <br>
+    <div class="workout-grid">
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <a href="https://www.youtube.com/watch?v=ml6cT4AZdqI"><img src="./assets/images/cardio.png" alt="workout-images"></a>
+            </div>
+
+            <h2>Cardio Blast</h2>
+
+            <p> 
+                A high-intensity cardio workout to boost your endurance. Get ready to sweat!
+            </p>
+           
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <a href="https://www.youtube.com/watch?v=MjPVPDBJ94A"><img src="./assets/images/strength.png" alt="workout-images"></a>
+            </div>
+
+            <h2>Strength Training</h2>
+
+            <p> 
+                Build Strength and muscle with this effective strength training routine.
+            </p>
+           
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <a href="https://www.youtube.com/watch?v=8JpKOczCPHU"><img src="./assets/images/full-body.png" alt="workout-images"></a>
+            </div>
+
+            <h2>Full Body Workout</h2>
+
+            <p> 
+                Build Strength and muscle with this effective strength training routine.
+            </p>
+           
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-images">
+                <a href="https://www.youtube.com/watch?v=95846CBGU0M"><img src="./assets/images/muscle.png" alt="workout-images"></a>
+            </div>
+
+            <h2>Muscle Building</h2>
+
+            <p> 
+                Build Strength and muscle with this effective strength training routine.
+            </p>
+           
+        </div>
+    </div>
+</section>
+
+ <!-- Section BMI -->
+<section>
+    <div class="BMI" id="BMI">
+        <div class="container">
+            <div class="image-holder">
+                <img src="./assets/images/bmi.jpg" alt="BMI banner">
+            </div>
+            <div class="bmi-cal">
+                <h1 class="heading"> BMI Calculator</h1>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="age" id="age" required>
+                        <label for="age">Enter your age:</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" id="height" required>
+                        <label for="height">Enter your height (inches):</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" id="weight" required>
+                        <label for="weight">Enter your weight (kg):</label>
+                    </div>
+                    <button type="button" onclick="calculateBMI()" class="btn-login">Calculate BMI</button>
+                </form>
+                <div id="bmi-result"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- Section Calories Burned -->
+<section>
+    <div class="calories" id="calories burned">
+        <div class="container">
+            <div class="image-holder">
+                <img src="./assets/images/calories.jpg" alt="calories banner">
+            </div>
+            <div class="cal-burner">
+                <h1 class="heading"> Calories Burned Calculator</h1>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="number"required>
+                        <label>Enter workout duration</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="number"required>
+                        <label>Enter number of workout</label>
+                    </div>
+                    <button type="submit" class="btn-login">Calculate Calories Burned</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--custom js link -->
+<script src="scripts/index.js"></script> 
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+</body>
+</html>
+>>>>>>> f98599f158fabe974d7502cedcafe97c0b765c5f
