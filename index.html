@@ -23,7 +23,7 @@
             <a href="#workout">Workouts</a>
             <a href="#BMI">BMI</a>
             <a href="#calories burned">Calories Burned</a>
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
             <a href="#">FAQs</a>
             <button class="btnLogin-popup" id="form-open">Join Now</button>
     </nav>
@@ -265,20 +265,62 @@
                 <h1 class="heading"> Calories Burned Calculator</h1>
                 <form action="#">
                     <div class="input-box">
-                        <input type="number"required>
+                        <input type="number" id="weight" required>
+                        <label>Enter your weight</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input type="number"  id="duration" required>
                         <label>Enter workout duration</label>
                     </div>
-                    <div class="input-box">
-                        <input type="number"required>
-                        <label>Enter number of workout</label>
-                    </div>
-                    <button type="submit" class="btn-login">Calculate Calories Burned</button>
+                    <button type="submit" onclick="calculateCalories()" class="btn-login">Calculate Calories Burned</button>
+
+                    <div id="calResult"></div>
                 </form>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Section contact -->
+<section>
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="contact-us">
+                <h1 class="heading">Contact Us</h1>
+                <table class="table"> 
+                    <tr>
+                        <td><input type="text" class="form-control" placeholder="NAME"/></td>
+                        <td><input type="email" class="form-control" placeholder="EMAIL"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" class="form-control" placeholder="PHONE NUMBER"/></td>
+                        <td><input type="text" class="form-control" placeholder="ADDRESS"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
+
+                    <td colspan="2">
+                        <textarea id="form-MSG" placeholder="Type your message..."></textarea>
+                    </td>
+                
+                    <tr>
+                   <td colspan="2" class="text-center"><button type="submit" class="btn-login">SEND</button></td>
+                    </tr>
+                </table>
+            </div>
+                    
+            <div class="image-holder">
+                <img src="./assets/images/welcome.png" alt="contact banner">
+            </div>
+        
+        </div>
+    </div>
+</section>
     <!--custom js link -->
 <script src="scripts/index.js"></script> 
 

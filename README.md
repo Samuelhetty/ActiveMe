@@ -6,7 +6,7 @@ ActiveMe is a fitness website designed for individuals to conveniently workout f
 ![HOME!](assets/images/loginform.png)
 ![HOME!](assets/images/signinform.png)
 
-## Feature of ACTVIME
+## Features of ACTIVEME
 
 - Body Mass Index(BMI) Calculator
 The BMI calculator on ActiveMe allows you to input your height and weight to calculate your Body Mass Index (BMI), providing an estimate of your body fat based on these measurements.

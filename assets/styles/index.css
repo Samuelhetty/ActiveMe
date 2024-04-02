@@ -44,6 +44,8 @@ body {
 section {
     padding: 2rem 7%;
     margin: 20px 0;
+    min-height: 100vh;
+    transition: height 9999s;
     
 }
 
@@ -555,6 +557,44 @@ header .icon span:hover{
     flex: 1 1 45rem;
     padding: 2rem;
 }
+
+#calResult {
+    margin-top: 20px;
+}
+
+
+.contact .container {
+    
+    background: #f7f5f7;
+    display: flex;
+    align-items: center;
+}
+
+.contact .container .image-holder img{
+    width: 100%
+}
+
+.contact .container .contact-us{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.contact-us input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    width: 70%;
+    height: 100px;
+    padding: 10px;
+    font-size: 14px;
+}
+
 /* media queries */
 @media (max-width:991px){
 

@@ -118,3 +118,32 @@ document.getElementById("searchButton").addEventListener("click", async () => {
         console.error(error);
     }
 });
+
+/*Calories Calculater*/
+
+/*function calculateCalories() {
+    const weight = document.getElementById('weight').value;
+    const duration = document.getElementById('duration').value;
+
+    const caloriesBurned = 5 * weight * duration;
+
+    const calResult = document.getElementById('calResult');
+    calResult.innerHTML = <p>Calories Burned: ${caloriesBurned} kcal</p>;
+}*/
+
+
+function calculateCalories() {
+    var weight = parseFloat(document.getElementById('weight').value);
+    var duration = parseFloat(document.getElementById('duration').value);
+
+    // Check if weight and duration are valid numbers
+    if (isNaN(weight) || isNaN(duration)) {
+        alert("Please provide valid weight and duration values.");
+    }
+    else {
+        const caloriesBurned = 5 * weight * duration;
+        const calResult = document.getElementById('calResult');
+        calResult.innerHTML = <p>Calories Burned: ${caloriesBurned.toFixed(2)} kcal</p>;
+    }
+
+}
