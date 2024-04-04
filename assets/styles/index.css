@@ -80,20 +80,14 @@ header {
 header .icon span {
     color: #fff;
     cursor: pointer;
-    font-size: 3rem;
-    margin-left: 2rem;
-    width: 130px;
-    height: 50px;
+    font-size: 25px;
+    display: none;
     font-weight: 500;
-    margin-left: 40px;
+   
 }
 
 header .icon span:hover{
     color:#fff;
-}
-
-.menu-btn {
-    display: flex;
 }
 
 .logo img {
@@ -101,7 +95,7 @@ header .icon span:hover{
     height: auto;
 }
 
-.nav-list a {
+.nav-list a{
     text-decoration: none;
     color: #fafafa;
     position: relative;
@@ -111,9 +105,9 @@ header .icon span:hover{
     transition: color 0.3s ease;
 }
 
-/*.nav-list a.active {
-    right: ; 
-}*/
+.nav-list a.active {
+    right: 0; 
+}
 
 .nav-list a::after {
     content: '';
@@ -607,26 +601,38 @@ textarea {
     }
 }
 
-@media (max-width:991px){
+@media (max-width:768px){
 
     #menu-btn {
         display: inline-block;
     }
-
-.header .nav-list {
-    position: absolute;
-    top:100%; right: 100%;
-    background: #fff;
-    width: 30rem;
-    height: calc(100vh - 9.5rem);
+    
+    header .nav-list a.active{
+        position: fixed;
+        flex-direction: column;
+        top:0; right: 100%;
+        background: #fff;
+        min-width: 30;
+        height: 100vh;
+        align-items: flex-start;
+        justify-content: start;
+        padding-top: 10rem;
     }
 
-.header .nav-list a {
-    color:black;
-    display: block;
-    margin: 1.5rem;
-    padding:.5rem;
-    font-size: 2rem;
+    header .icon .icon-close{
+        position: absolute;
+        top: 0; left: 0;
+        margin: 25px;
+
+
+    }
+
+    header .nav-list a {
+        color:black;
+        display: block;
+        margin: 1.5rem;
+        padding:.5rem;
+        font-size: 2rem;
 
     }
 }

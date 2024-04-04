@@ -7,17 +7,33 @@
 
 
     <link rel="stylesheet" href="assets/styles/index.css">
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "GAaHdj0pXtuk_GHTN",
+          });
+       })();
+    </script>
+
 
 </head>
 <body>
 
 <header>
+
     <div class="logo">
         <img src="./assets/images/icon.png" alt="ActiveMe Logo">
     </div>
+    <div class="icon">
+        <span class="icon-closed">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+    </div>
     
     <nav class="nav-list">
+        
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#workout">Workouts</a>
@@ -28,12 +44,11 @@
             <button class="btnLogin-popup" id="form-open">Join Now</button>
     </nav>
     <div class="icon">
-        <span class="fas fa-bars" id="menu-btn">
+        <span class="menuBTN" id="menu-btn">
             <ion-icon name="menu-outline"></ion-icon>
         </span>
     </div>
 </header>
-
 
 <section class="home" id="home">
     <div class="wrapper">
@@ -265,7 +280,7 @@
                 <h1 class="heading"> Calories Burned Calculator</h1>
                 <form action="#">
                     <div class="input-box">
-                        <input type="number" id="weight" required>
+                        <input type="number" id="cal_weight" required>
                         <label>Enter your weight</label>
                     </div>
                     
@@ -290,15 +305,15 @@
                 <h1 class="heading">Contact Us</h1>
                 <table class="table"> 
                     <tr>
-                        <td><input type="text" class="form-control" placeholder="NAME"/></td>
-                        <td><input type="email" class="form-control" placeholder="EMAIL"/></td>
+                        <td><input type="text" id="name" class="form-control" placeholder="NAME"/></td>
+                        <td><input type="email" id="email" class="form-control" placeholder="EMAIL"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td><input type="number" class="form-control" placeholder="PHONE NUMBER"/></td>
-                        <td><input type="text" class="form-control" placeholder="ADDRESS"/></td>
+                        <td><input type="number" id="phone_number" class="form-control" placeholder="PHONE NUMBER"/></td>
+                        <td><input type="text" id="address" class="form-control" placeholder="ADDRESS"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
@@ -309,7 +324,7 @@
                     </td>
                 
                     <tr>
-                   <td colspan="2" class="text-center"><button type="submit" class="btn-login">SEND</button></td>
+                   <td colspan="2" class="text-center"><button onclick="sendMail()" type="submit" class="btn-login">SEND</button></td>
                     </tr>
                 </table>
             </div>

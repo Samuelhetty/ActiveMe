@@ -31,11 +31,19 @@ iconClose.addEventListener('click', ()=> {
 
 
 
-/*let nav = document.querySelector('.nav-list');
+let navbar = document.querySelector('.nav-list');
+let menuBTN = document.querySelector('.menuBTN');
+let iconClosed = document.querySelector('.icon-closed');
 
-document.querySelector(('#menu-btn').onclick= ()=> {
-    nav-list.classList.add('active');
-});*/
+menuBTN.addEventListener('click', ()=> {
+    navbar.classList.add('show');
+});
+
+iconClosed.addEventListener('click', ()=> {
+    navbar.classList.remove('show');
+});
+
+
 
 /* login/signup */
  // Dummy database for storing user information
@@ -132,8 +140,8 @@ document.getElementById("searchButton").addEventListener("click", async () => {
 }*/
 
 
-function calculateCalories() {
-    var weight = parseFloat(document.getElementById('weight').value);
+/*function calculateCalories() {
+    var weight = parseFloat(document.getElementById('cal_weight').value);
     var duration = parseFloat(document.getElementById('duration').value);
 
     // Check if weight and duration are valid numbers
@@ -143,7 +151,35 @@ function calculateCalories() {
     else {
         const caloriesBurned = 5 * weight * duration;
         const calResult = document.getElementById('calResult');
-        calResult.innerHTML = <p>Calories Burned: ${caloriesBurned.toFixed(2)} kcal</p>;
+        calResult.innerHTML = "Calories Burned:" ${caloriesBurned.toFixed(2)};
     }
 
+}*/
+
+/*contact form*/
+
+function sendMail() {
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone_number: document.getElementById("phone_number").value,
+        address: document.getElementById("address").value,
+        message: document.getElementById("form-MSG").value,
+    };
+
+    const serviceID ="service_blbwqt9";
+    const templateID ="template_jnezkng";
+
+    emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+        document.getElementById("name").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("phone_number").value = '';
+        document.getElementById("address").value = '';
+        document.getElementById("form-MSG").value = '';
+        console.log(res);
+        alert("Your message was sent successfully");
+    })
+    .catch((err) => console.log(err));
 }
