@@ -129,32 +129,25 @@ document.getElementById("searchButton").addEventListener("click", async () => {
 
 /*Calories Calculater*/
 
-/*function calculateCalories() {
-    const weight = document.getElementById('weight').value;
-    const duration = document.getElementById('duration').value;
+function calculateCalories() {
+    // Get weight and duration values from input fields
+    var weight = document.getElementById("cal_weight").value;
+    var duration = document.getElementById("duration").value;
 
-    const caloriesBurned = 5 * weight * duration;
-
-    const calResult = document.getElementById('calResult');
-    calResult.innerHTML = <p>Calories Burned: ${caloriesBurned} kcal</p>;
-}*/
-
-
-/*function calculateCalories() {
-    var weight = parseFloat(document.getElementById('cal_weight').value);
-    var duration = parseFloat(document.getElementById('duration').value);
-
-    // Check if weight and duration are valid numbers
-    if (isNaN(weight) || isNaN(duration)) {
-        alert("Please provide valid weight and duration values.");
-    }
-    else {
-        const caloriesBurned = 5 * weight * duration;
-        const calResult = document.getElementById('calResult');
-        calResult.innerHTML = "Calories Burned:" ${caloriesBurned.toFixed(2)};
+    // Validate inputs
+    if (weight === "" || duration === "") {
+        alert("Please enter your weight and workout duration.");
+        return;
     }
 
-}*/
+    // Calculate calories burned (Assuming a simple formula, actual formula may vary)
+    var caloriesBurned = (weight * 2.2) * (duration / 60) * 4.184; // Example formula
+
+    // Display the result
+    var resultDiv = document.getElementById("calResult");
+    resultDiv.innerHTML = "<p>Calories Burned: " + caloriesBurned.toFixed(2) + " calories</p>";
+}
+
 
 /*contact form*/
 
