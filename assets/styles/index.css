@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
     margin: 0;
@@ -593,6 +594,55 @@ textarea {
     height: 100px;
     padding: 10px;
     font-size: 14px;
+}
+
+
+.FAQs{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif; 
+}
+
+.wrapper {
+    max-width: 75%;
+    margin: auto;
+}
+
+.wrapper > p,
+.wrapper > h1 {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.wrapper > h1{
+    letter-spacing: 3px;
+}
+
+.accordion {
+    background-color: #f7f5f7;
+    color:#444;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+}
+
+.active, .accordion:hover{
+    background-color: #ccc;
+}
+
+.panel{
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 /* media queries */

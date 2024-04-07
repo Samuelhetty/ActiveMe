@@ -91,11 +91,25 @@ function calculateBMI() {
 
     // Calculate BMI
     var bmi = weight / (height * height);
-    bmi = bmi.toFixed(2);
-
-    // Display the result
-    document.getElementById('bmi-result').innerHTML = "Your BMI is: " + bmi;
+    bmi = bmi.toFixe
 }
+
+/*FAQs*/
+document.addEventListener("DOMContentLoaded", function() {
+    var accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(function(accordion) {
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+        });
+    });
+});
 
 /* workout */
 
