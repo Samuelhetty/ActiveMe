@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ActiveMe</title>
-
-
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <link rel="stylesheet" href="assets/styles/index.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
@@ -26,13 +28,13 @@
     <div class="logo">
         <img src="./assets/images/icon.png" alt="ActiveMe Logo">
     </div>
-    <div class="icon">
-        <span class="icon-closed">
-            <ion-icon name="close-outline"></ion-icon>
-        </span>
-    </div>
     
     <nav class="nav-list">
+        <div class="icon">
+            <span class="icon-closed">
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
+        </div>
         
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
@@ -49,7 +51,7 @@
         </span>
     </div>
 </header>
-
+<div class="main-container">
 <section class="home" id="home">
     <div class="wrapper">
         <span class="icon-close">
@@ -58,7 +60,7 @@
         
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="#">
+            <form id="loginForm">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
@@ -77,7 +79,7 @@
                     <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button onclick="loginSignup()" type="submit" class="btn-login">Login</button>
+                <button type="submit" class="btn-login">Login</button>
                 <div class="login-register">
                     <p> Don't have an account? <a href="#" class="register-link">SignUp</a></p>
                 </div>
@@ -85,7 +87,7 @@
         </div>
         <div class="form-box register">
             <h2>SignUp</h2>
-            <form action="#">
+            <form id="signupForm">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
@@ -111,7 +113,7 @@
                     <label><input type="checkbox"></label>
                     <a href="#">I agree to the terms & conditions.</a>
                 </div>
-                <button onclick="loginSignup()" type="submit" class="btn-login">Sign In</button>
+                <button type="submit" class="btn-login">Sign In</button>
                 <div class="login-register">
                     <p> Already have an account? <a href="#" class="login-link">Login</a></p>
                 </div>
@@ -128,6 +130,7 @@
         <button class="btnLogin-popup1" id="form-open1">Join Now</button>
     </div>
 </section>
+
       <!-- 
         - Section about
      -->
@@ -168,6 +171,8 @@
     </div>
 </section>
 
+
+
 <section class="workout" id="workout">
     <h1 class="heading"> <span>workout</span> plans </h1>
     <div class="search-container">
@@ -181,88 +186,160 @@
         <div id="result" class="result"></div>
     </div>
     <br> <br>
-    <div class="workout-grid">
+    <div class="swiper mySwiper container">
+        <div class="workout-grid swiper-wrapper">
 
-        <div class="workout-card">
-            <div class="workout-images">
-                <a href="https://www.youtube.com/watch?v=ml6cT4AZdqI"><img src="./assets/images/cardio.png" alt="workout-images"></a>
-            </div>
+            <div class="workout-card swiper-slide">
+                <div class="workout-images">
+                    <a href="https://www.youtube.com/watch?v=ml6cT4AZdqI"><img src="./assets/images/cardio.png" alt="workout-images"></a>
+                </div>
 
-            <h2>Cardio Blast</h2>
+                <h2>Cardio Blast</h2>
 
-            <p> 
+                <p> 
                 A high-intensity cardio workout to boost your endurance. Get ready to sweat!
-            </p>
+                </p>
            
-        </div>
-
-        <div class="workout-card">
-            <div class="workout-images">
-                <a href="https://www.youtube.com/watch?v=MjPVPDBJ94A"><img src="./assets/images/strength.png" alt="workout-images"></a>
             </div>
 
-            <h2>Strength Training</h2>
+            <div class="workout-card swiper-slide">
+                <div class="workout-images">
+                    <a href="https://www.youtube.com/watch?v=MjPVPDBJ94A"><img src="./assets/images/strength.png" alt="workout-images"></a>
+                </div>
 
-            <p> 
+                <h2>Strength Training</h2>
+
+                <p> 
                 Build Strength and muscle with this effective strength training routine.
-            </p>
+                </p>
            
-        </div>
-
-        <div class="workout-card">
-            <div class="workout-images">
-                <a href="https://www.youtube.com/watch?v=8JpKOczCPHU"><img src="./assets/images/full-body.png" alt="workout-images"></a>
             </div>
 
-            <h2>Full Body Workout</h2>
+            <div class="workout-card swiper-slide">
+                <div class="workout-images">
+                    <a href="https://www.youtube.com/watch?v=8JpKOczCPHU"><img src="./assets/images/full-body.png" alt="workout-images"></a>
+                </div>
 
-            <p> 
+                <h2>Full Body Workout</h2>
+
+                <p> 
                 Build Strength and muscle with this effective strength training routine.
-            </p>
+                </p>
            
-        </div>
+            </div>
+        
 
-        <div class="workout-card">
-            <div class="workout-images">
-                <a href="https://www.youtube.com/watch?v=95846CBGU0M"><img src="./assets/images/muscle.png" alt="workout-images"></a>
+            <div class="workout-card">
+               <div class="workout-images">
+                    <a href="https://www.youtube.com/watch?v=95846CBGU0M"><img src="./assets/images/muscle.png" alt="workout-images"></a>
+                </div>
+
+                <h2>Muscle Building</h2>
+
+                <p> 
+                Build Strength and muscle with this effective strength training routine.
+                </p>
+           
             </div>
 
-            <h2>Muscle Building</h2>
+            <div class="workout-card">
+                <div class="workout-images">
+                    <a href="https://www.youtube.com/watch?v=95846CBGU0M"><img src="./assets/images/muscle.png" alt="workout-images"></a>
+                </div>
 
-            <p> 
+                <h2>Muscle Building</h2>
+
+                <p> 
                 Build Strength and muscle with this effective strength training routine.
-            </p>
+                </p>
+           
+            </div>
+
+            <div class="workout-card">
+                <div class="workout-images">
+                    <a href="https://www.youtube.com/watch?v=95846CBGU0M"><img src="./assets/images/muscle.png" alt="workout-images"></a>
+                </div>
+
+                <h2>Muscle Building</h2>
+
+                <p> 
+                Build Strength and muscle with this effective strength training routine.
+                </p>
+            </div>
            
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-scrollbar"></div>
+        <div class="swiper-pagination"></div>
     </div>
 </section>
 
+
+
  <!-- Section BMI -->
-<section>
+
+ <section>
     <div class="BMI" id="BMI">
         <div class="container">
             <div class="image-holder">
-                <img src="./assets/images/bmi.jpg" alt="BMI banner">
+               <img src="./assets/images/bmi.jpg" alt="BMI banner">
+            </div>   
+         <div class="box">
+              <h1>BMI Calculator</h1>
+            <div class="content">
+
+
+                <div class="input">
+                    <label for="height">Age</label>
+                    <input type="text" class="text-input" id="age" autocomplete="off" required/>
+                </div>
+
+                <div class="gender">
+
+                  <label class="container">
+                    <input type="radio" name="radio" id="m"><p class="text">Male</p>
+                    <span class="checkmark"></span>
+                  </label>
+
+
+                  <label class="container">
+                    <input type="radio" name="radio" id="f" ><p class="text">Female</p>
+                      <span class="checkmark"></span>
+                    </label>
+
+                </div>
+
+                <div class="containerHW">
+                    <div class="inputH">
+                     <label for="height">Height(cm)</label>
+                     <input type="number" id="height" required>
+                    </div>
+
+                    <div class="inputW">
+                      <label for="weight">Weight(kg)</label>
+                     <input type="number" id="weight" required>
+                    </div>
+                </div>
+
+                <button class="calculate" id="submit" onclick="calculate();">Calculate BMI</button>
             </div>
-            <div class="bmi-cal">
-                <h1 class="heading"> BMI Calculator</h1>
-                <form action="#">
-                    <div class="input-box">
-                        <input type="age" id="age" required>
-                        <label for="age">Enter your age:</label>
-                    </div>
-                    <div class="input-box">
-                        <input type="number" id="height" required>
-                        <label for="height">Enter your height (inches):</label>
-                    </div>
-                    <div class="input-box">
-                        <input type="number" id="weight" required>
-                        <label for="weight">Enter your weight (kg):</label>
-                    </div>
-                    <button type="button" onclick="calculateBMI()" class="btn-login">Calculate BMI</button>
-                </form>
-                <div id="bmi-result"></div>
+            <div class="result">
+              <p>Your BMI is</p>
+                <div id="bmi-result">00.00</div>
+                  <p class="comment"></p>
             </div>
+        </div>
+    </div>
+
+
+
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modalText"></p>
         </div>
     </div>
 </section>
@@ -270,6 +347,7 @@
 
       
 <!-- Section Calories Burned -->
+
 <section>
     <div class="calories" id="calories burned">
         <div class="container">
@@ -282,8 +360,7 @@
                     <div class="input-box">
                         <input type="number" id="cal_weight" required>
                         <label>Enter your weight</label>
-                    </div><div id="calResult"></div>
-                    
+                    </div>
                     <div class="input-box">
                         <input type="number"  id="duration" required>
                         <label>Enter workout duration</label>
@@ -297,6 +374,7 @@
 </section>
 
 <!-- Section contact -->
+
 <section>
     <div class="contact" id="contact">
         <div class="container">
@@ -335,6 +413,9 @@
         </div>
     </div>
 </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--custom js link -->
 <script src="scripts/index.js"></script> 
 

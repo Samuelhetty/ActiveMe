@@ -29,81 +29,140 @@ iconClose.addEventListener('click', ()=> {
 });
 
 
-
-
 let navbar = document.querySelector('.nav-list');
 let menuBTN = document.querySelector('.menuBTN');
 let iconClosed = document.querySelector('.icon-closed');
 
 menuBTN.addEventListener('click', ()=> {
-    navbar.classList.add('show');
+    navbar.classList.add('active');
 });
 
 iconClosed.addEventListener('click', ()=> {
-    navbar.classList.remove('show');
+    navbar.classList.remove('active');
 });
 
 
+/*login/sigup*/
+// Function to handle login form submission
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let username = document.getElementById("usernameLogin").value;
+    let password = document.getElementById("passwordLogin").value;
 
-/* login/signup */
- // Dummy database for storing user information
- function loginSignup() {
-    let users = [];
+    fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Login failed');
+        }
+    })
+    .then(data => {
+        alert("Login successful!");
+        // Redirect to user dashboard or perform other actions
+    })
+    .catch(error => {
+        alert("Invalid username or password!");
+    });
+});
 
- // Function to handle login form submission
- document.getElementById("form-box login").addEventListener("submit", function(event) {
-     event.preventDefault();
-     let username = document.getElementById("usernameLogin").value;
-     let password = document.getElementById("passwordLogin").value;
-     let user = users.find(u => u.username === username && u.password === password);
-     if (user) {
-         alert("Login successful!");
-         // Redirect to user dashboard or perform other actions
-     } else {
-         alert("Invalid username or password!");
-     }
- });
+// Function to handle signup form submission
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let email = document.getElementById("emailSignup").value; // Get the email value
+    let password = document.getElementById("passwordSignup").value;
 
- // Function to handle signup form submission
- document.getElementById("form-box register").addEventListener("submit", function(event) {
-     event.preventDefault();
-     let username = document.getElementById("usernameSignup").value;
-     let email = document.getElementById("emailSignup").value;
-     let password = document.getElementById("passwordSignup").value;
-     let existingUser = users.find(u => u.username === username);
-     if (existingUser) {
-         alert("Username already exists!");
-     } else {
-         users.push({ username: username, email: email, password: password });
-         alert("Signup successful! You can now login.");
-         // Clear the signup form after successful signup
-         document.getElementById("signupForm").reset();
-     }
- });
-}
+    fetch('http://localhost:3000/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: email, email, password }) // Send email as username
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Signup failed');
+        }
+    })
+    .then(data => {
+        alert("Signup successful! You can now login.");
+        // Clear the signup form after successful signup
+        document.getElementById("signupForm").reset();
+    })
+    .catch(error => {
+        alert("Username (email) already exists!");
+    });
+});
+
 
 /* BMI Calculator*/
 
-function calculateBMI() {
-    var height = parseFloat(document.getElementById('height').value);
-    var weight = parseFloat(document.getElementById('weight').value);
+var age = document.getElementById("age");
+var height = document.getElementById("height");
+var weight = document.getElementById("weight");
+var male = document.getElementById("m");
+var female = document.getElementById("f");
+var form = document.getElementById("form");
+let resultArea = document.querySelector(".comment");
 
-    // Check if height and weight are valid numbers
-    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-        document.getElementById('bmi-result').innerHTML = "Please provide valid height and weight values.";
-        return;
-    }
+modalContent = document.querySelector(".modal-content");
+modalText = document.querySelector("#modalText");
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
-    // Convert height to meters (from centimeters)
-    height = height / 100; // converting cm to meters
 
-    // Calculate BMI
-    var bmi = weight / (height * height);
-    bmi = bmi.toFixed(2);
+function calculate(){
+ 
+  if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
+    modal.style.display = "block";
+    modalText.innerHTML = `All fields are required!`;
 
-    // Display the result
-    document.getElementById('bmi-result').innerHTML = "Your BMI is: " + bmi;
+  }else{
+    countBmi();
+  }
+
 }
+
+
+function countBmi(){
+  var p = [age.value, height.value, weight.value];
+  if(male.checked){
+    p.push("male");
+  }else if(female.checked){
+    p.push("female");
+  }
+
+  var bmi = Number(p[2])/(Number(p[1])/100*Number(p[1])/100);
+      
+  var result = '';
+  if(bmi<18.5){
+    result = 'Underweight';
+     }else if(18.5<=bmi&&bmi<=24.9){
+    result = 'Healthy';
+     }else if(25<=bmi&&bmi<=29.9){
+    result = 'Overweight';
+     }else if(30<=bmi&&bmi<=34.9){
+    result = 'Obese';
+     }else if(35<=bmi){
+    result = 'Extremely obese';
+     }
+
+
+
+resultArea.style.display = "block";
+document.querySelector(".comment").innerHTML = `You are <span id="comment">${result}</span>`;
+document.querySelector("#bmi-result").innerHTML = bmi.toFixed(2);
+
+}
+
 
 /* workout */
 
@@ -176,3 +235,32 @@ function sendMail() {
     })
     .catch((err) => console.log(err));
 }
+
+/* Initialize Swiper */
+
+var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      centeredSlides: false,
+      slidesPerGroupSkip: 1,
+      grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+});
