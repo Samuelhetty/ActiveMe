@@ -597,25 +597,25 @@ textarea {
 }
 
 
-.FAQs{
+.FAQs {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif; 
 }
 
-.wrapper {
+.wrapper1 {
     max-width: 75%;
     margin: auto;
 }
 
-.wrapper > p,
-.wrapper > h1 {
+.wrapper1 > p,
+.wrapper1 > h1 {
     margin: 1.5rem 0;
     text-align: center;
 }
 
-.wrapper > h1{
+.wrapper1 > h1{
     letter-spacing: 3px;
 }
 
@@ -643,6 +643,11 @@ textarea {
     background-color: white;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    display: none; /* Initially hide the panel */
+}
+
+.panel.show {
+    display: block; /* Display the panel when the "show" class is applied */
 }
 
 /* media queries */

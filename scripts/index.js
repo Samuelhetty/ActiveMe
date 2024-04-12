@@ -95,21 +95,11 @@ function calculateBMI() {
 }
 
 /*FAQs*/
-document.addEventListener("DOMContentLoaded", function() {
-    var accordions = document.querySelectorAll('.accordion');
+function togglePanel(button) {
+    var panel = button.nextElementSibling; // Get the next sibling element, which is the <div class="panel">
+    panel.classList.toggle("show"); // Toggle the "show" class on the panel <div>
 
-    accordions.forEach(function(accordion) {
-        accordion.addEventListener('click', function() {
-            this.classList.toggle('active');
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + 'px';
-            }
-        });
-    });
-});
+}
 
 /* workout */
 
